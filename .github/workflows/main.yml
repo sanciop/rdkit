@@ -19,7 +19,7 @@ jobs:
         spack -e . install --no-check-signature
 
     - name: Run
-      shell: bash
+      shell: spack-bash
       run: |
         spack env activate .
         pwd
