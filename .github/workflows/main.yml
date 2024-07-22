@@ -22,7 +22,7 @@ jobs:
       shell: spack-bash
       run: |
         spack env activate .
-        pwd
+        echo ${PWD}
         spack cd rdkit-spack
         ctest
         
