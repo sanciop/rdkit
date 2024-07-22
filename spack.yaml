@@ -1,7 +1,7 @@
 spack:
   view: /opt/view
   specs:
-  - python@3.11
+  - rdkit
 
   config:
     install_tree:
@@ -10,7 +10,7 @@ spack:
 
   packages:
     all:
-      require: 'target=x86_64_v3'
+      require: target=x86_64_v3
 
   mirrors:
     local-buildcache:
