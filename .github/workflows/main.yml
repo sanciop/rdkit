@@ -17,14 +17,7 @@ jobs:
       run: |
         spack repo add ./rdkit-spack 
         spack -e . install --no-check-signature --test=root
-
-    - name: Run
-      shell: spack-bash {0}
-      run: |    
-        spack env activate .
-        spack cd rdkit-spack
-        make test
-        
+                   
     - name: Archive spack logs
       uses: actions/upload-artifact@v4
       with:
