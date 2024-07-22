@@ -1,7 +1,6 @@
 spack:
-  view: /opt/view
   specs:
-  - rdkit
+  - tutorial-rdkit
 
   config:
     install_tree:
