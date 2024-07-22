@@ -19,9 +19,8 @@ jobs:
         spack -e . install --no-check-signature
 
     - name: Run
-      shell: bash
+      shell: spack-bash {0}
       run: |    
-        . /home/runner/work/rdkit/rdkit/spack/share/spack/setup-env.sh
         spack env activate .
         spack cd rdkit-spack
         make test
