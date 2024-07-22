@@ -14,8 +14,9 @@ jobs:
       uses: spack/setup-spack@v2
     
     - name: Install
-      run: spack repo add ./rdkit-spack 
-      run: spack -e . install --test=root --no-check-signature
+      run: |
+        spack repo add ./rdkit-spack 
+        spack -e . install --test=root --no-check-signature
 
     - name: Run
       shell: spack-bash
