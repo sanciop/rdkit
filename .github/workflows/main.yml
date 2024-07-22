@@ -19,16 +19,18 @@ jobs:
         spack -e . install --no-check-signature
 
     - name: Run
-      run: |
+      shell: bash
+      run: |    
+        . /home/runner/work/rdkit/rdkit/spack/share/spack/setup-env.sh
         spack env activate .
         spack cd rdkit-spack
-        ctest
+        make test
         
     - name: Archive spack logs
       uses: actions/upload-artifact@v4
       with:
         name: Spack logs
-        path: /tmp/runner/spack-stage/spack-stage-tutorial-rdkit-1.0-tutorial-n5veafzkad3nkkc7ul3kyzj5yyflsmlz
+        path: /tmp/runner/spack-stage/
     
     - name: Push packages and update index
       run: |
